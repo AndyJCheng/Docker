@@ -1,5 +1,5 @@
 # Docker
-## Docker容器使用问题：Failed to get D-Bus connection: Operation not permitted  
+## Docker容器使用问题：Failed to get D-Bus connection: Operation not permitted    
 在CentOS7 中，docker容器中yum 安装完httpd后，启动报错  
 solution:  
 docker run -d --privileged=true centos /usr/sbin/init  
