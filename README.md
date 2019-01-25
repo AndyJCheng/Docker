@@ -1,5 +1,5 @@
 # Docker
-# install  
+## install  
 yum install epel -release -y  
 yum install epel - release -y  
 yum install docker* -y  
@@ -21,3 +21,14 @@ eb15fd7394b2        centos              "/usr/sbin/init"    34 seconds ago      
 0e2a069279b0        centos              "/usr/sbin/init"    7 minutes ago       Up 7 minutes                            jolly_volhar  
 docker exec -it eb15fd7394b2 /bin/bash  
 systemctl start httpd  
+
+## docker push  
+docker login  
+docker images  
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES  
+eb15fd7394b2        40791e75c081        "/usr/sbin/init"    25 minutes ago      Up 25 minutes                           adoring_wing  
+47befe1d257f        40791e75c081        "/usr/sbin/init"    29 minutes ago      Up 29 minutes                           clever_saha  
+9df39d797532        40791e75c081        "/usr/sbin/init"    29 minutes ago      Up 29 minutes                           amazing_wing  
+0e2a069279b0        40791e75c081        "/usr/sbin/init"    32 minutes ago      Up 32 minutes                           jolly_volhar  
+docker tag 40791e75c081 dunksky/centos:v1  
+docker push dunksky/centos:v1  
