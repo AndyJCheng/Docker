@@ -1,4 +1,14 @@
 # Docker
+# install  
+yum install epel -release -y  
+yum install epel - release -y  
+yum install docker* -y  
+
+sudo groupadd docker  
+sudo gpasswd -a $USER docker  
+systemctl start docker  
+docker image inspect --format='{{.RepoTags}} {{.Id}} {{.Parent}}' $(docker image ls -q --filter since=id)  
+
 ## Docker容器使用问题：Failed to get D-Bus connection: Operation not permitted    
 在CentOS7 中，docker容器中yum 安装完httpd后，启动报错  
 solution:  
@@ -9,6 +19,5 @@ eb15fd7394b2        centos              "/usr/sbin/init"    34 seconds ago      
 47befe1d257f        centos              "/usr/sbin/init"    4 minutes ago       Up 4 minutes                            clever_saha  
 9df39d797532        centos              "/usr/sbin/init"    5 minutes ago       Up 5 minutes                            amazing_wing  
 0e2a069279b0        centos              "/usr/sbin/init"    7 minutes ago       Up 7 minutes                            jolly_volhar  
-
 docker exec -it eb15fd7394b2 /bin/bash  
 systemctl start httpd  
