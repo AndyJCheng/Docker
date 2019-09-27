@@ -9,6 +9,8 @@ yum install docker-engine -y
 curl -fsSL https://get.docker.com | sh
 ```
 **Docker子命令分类**  
-子命令分类 | 子命令  
--|-|-  
-环境信息  info version
+
+| 子命令分类 | 子命令 |
+|  ----  | ----  | 
+| 环境信息  | info, version |
+| 容器生命周期管理 | create exec |
