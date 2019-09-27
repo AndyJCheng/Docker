@@ -8,7 +8,6 @@ yum install docker-engine -y
 ```bash
 curl -fsSL https://get.docker.com | sh
 ```
-**Docker子命令分类**  
 
 子命令分类 | 子命令  
 -|-|-  
