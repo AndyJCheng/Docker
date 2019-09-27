@@ -11,4 +11,4 @@ curl -fsSL https://get.docker.com | sh
 
 子命令分类 | 子命令  
 -|-|-  
-环境信息  | info version
+环境信息  | info version |
