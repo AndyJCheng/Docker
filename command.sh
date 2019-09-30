@@ -4,6 +4,8 @@
 curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://f1361db2.m.daocloud.io
 docker pull image_name
 docker images
+docker images --filter=reference="*:latest"
+docker images --format "{{.Size}} {{.Tag}}"
 # 删除所有镜像
 docker rmi `docker images -q`
 # 删除所有容器
