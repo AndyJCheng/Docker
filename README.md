@@ -6,7 +6,25 @@ yum install docker* -y
 
 sudo groupadd docker  
 sudo gpasswd -a $USER docker  
-systemctl start docker  
+systemctl start docker 
+
+## delete docker
+```sh
+yum remove docker \
+docker-client \
+docker-client-latest \
+docker-common \
+docker-latest \
+docker-latest-logrotate \
+docker-logrotate \
+docker-selinux \
+docker-engine-selinux \
+docker-engine
+
+rm -rf /etc/systemd/system/docker.service.d
+rm -rf /var/lib/docker
+rm -rf /var/run/docker
+```
 docker image inspect --format='{{.RepoTags}} {{.Id}} {{.Parent}}' $(docker image ls -q --filter since=id)  
 
 ## Docker容器使用问题：Failed to get D-Bus connection: Operation not permitted    
@@ -31,4 +49,6 @@ eb15fd7394b2        40791e75c081        "/usr/sbin/init"    25 minutes ago      
 9df39d797532        40791e75c081        "/usr/sbin/init"    29 minutes ago      Up 29 minutes                           amazing_wing  
 0e2a069279b0        40791e75c081        "/usr/sbin/init"    32 minutes ago      Up 32 minutes                           jolly_volhar  
 docker tag 40791e75c081 dunksky/centos:v1  
-docker push dunksky/centos:v1  
+docker push dunksky/centos:v1 
+
+
